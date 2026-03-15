@@ -1,0 +1,563 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dani · creative dev portfolio</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- AOS Animation Library - Using CDN for reliability -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Animated background elements -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="gradient-bg"></div>
+  <div class="noise-overlay"></div>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <div class="logo">Dani<span class="logo-dot">.</span></div>
+    <div class="nav-links">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#arcade" class="nav-link">Arcade</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+    <div class="nav-toggle" id="navToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#work" class="mobile-link">Work</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#arcade" class="mobile-link">Arcade</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+      <div class="hero-badge">
+        <span class="hero-tag">✧ Developer & creator ✧</span>
+        <span class="hero-availability">
+          <span class="status-dot"></span> Available for work
+        </span>
+      </div>
+      <h1 class="glitch" data-text="Dani">Dani</h1>
+      <p class="hero-desc">I craft <span class="gradient-text"></span> that live at the intersection of code and creativity.</p>
+      <div class="hero-stats">
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+          <span class="stat-num">4+</span>
+          <span class="stat-label">Years building</span>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+          <span class="stat-num">20+</span>
+          <span class="stat-label">Projects shipped</span>
+        </div>
+        <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+          <span class="stat-num">∞</span>
+          <span class="stat-label">Lines of fun</span>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="btn primary">See my work <i class="fas fa-arrow-right"></i></a>
+        <a href="#arcade" class="btn secondary">Play my game <i class="fas fa-gamepad"></i></a>
+      </div>
+      <div class="hero-social">
+        <a href="https://github.com/Dani1157" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/dani-dudley-59776026b" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+      </div>
+    </div>
+    <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000">
+      <div class="code-window">
+        <div class="code-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="code-title">portfolio.js</span>
+        </div>
+        <pre class="code-content"><span style="color: #ff79c6;">const</span> <span style="color: #50fa7b;">dani</span> <span style="color: #ff79c6;">=</span> {
+  <span style="color: #8be9fd;">role</span>: <span style="color: #ffb86c;">'Design Engineer'</span>,
+  <span style="color: #8be9fd;">superpower</span>: <span style="color: #ffb86c;">'AI + Creativity'</span>,
+  <span style="color: #8be9fd;">vibe</span>: <span style="color: #ffb86c;">'✨ unlimited ✨'</span>,
+  <span style="color: #8be9fd;">build</span>: <span style="color: #ff79c6;">function</span>() {
+    <span style="color: #8be9fd;">return</span> <span style="color: #ffb86c;">'awesome'</span>;
+  }
+};</pre>
+      </div>
+      <div class="floating-tech">
+        <span class="tech-bubble">React</span>
+        <span class="tech-bubble">Tailwind</span>
+        <span class="tech-bubble">Figma</span>
+        <span class="tech-bubble">AI</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK SECTION -->
+  <section id="work" class="section">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">how i work</span>
+      <h2 class="section-title">Clean code. <span class="gradient-text">Creative mind.</span></h2>
+      <p class="section-description">I blend technical precision with artistic vision to create digital experiences that feel alive.</p>
+    </div>
+    <div class="work-grid">
+      <div class="work-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="work-icon"><i class="fas fa-bolt"></i></div>
+        <h3>Fast & Efficient</h3>
+        <p>I build performant applications that load quickly and run smoothly across all devices.</p>
+        <div class="work-hover"></div>
+      </div>
+      <div class="work-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="work-icon"><i class="fas fa-paint-brush"></i></div>
+        <h3>Pixel Perfect</h3>
+        <p>Every detail matters. I craft interfaces that are both beautiful and intuitive.</p>
+        <div class="work-hover"></div>
+      </div>
+      <div class="work-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="work-icon"><i class="fas fa-code"></i></div>
+        <h3>Clean Architecture</h3>
+        <p>Scalable, maintainable code that makes collaboration and updates a breeze.</p>
+        <div class="work-hover"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="section">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">my toolbox</span>
+      <h2 class="section-title">Technologies I <span class="gradient-text">love</span></h2>
+      <p class="section-description">Constantly learning and expanding my toolkit.</p>
+    </div>
+    
+    <!-- Category Badges -->
+    <div class="skills-categories" data-aos="fade-up">
+      <button class="skill-cat-btn active" data-cat="all">All</button>
+      <button class="skill-cat-btn" data-cat="frontend">Frontend</button>
+      <button class="skill-cat-btn" data-cat="backend">Backend</button>
+      <button class="skill-cat-btn" data-cat="design">Design</button>
+      <button class="skill-cat-btn" data-cat="ai">AI Tools</button>
+    </div>
+
+    <div class="skills-showcase">
+      <!-- Frontend -->
+      <div class="skill-group" data-category="frontend">
+        <h3 class="skill-group-title"><i class="fas fa-code"></i> Frontend</h3>
+        <div class="skill-cloud">
+          <span class="skill-cloud-item html"><i class="fab fa-html5"></i> HTML5</span>
+          <span class="skill-cloud-item css"><i class="fab fa-css3-alt"></i> CSS3</span>
+          <span class="skill-cloud-item js"><i class="fab fa-js"></i> JavaScript</span>
+          <span class="skill-cloud-item react"><i class="fab fa-react"></i> React</span>
+          <span class="skill-cloud-item vue"><i class="fab fa-vuejs"></i> Vue.js</span>
+          <span class="skill-cloud-item tailwind"><i class="fa-brands fa-tailwind"></i> Tailwind</span>
+          <span class="skill-cloud-item bootstrap"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="skill-group" data-category="backend">
+        <h3 class="skill-group-title"><i class="fas fa-server"></i> Backend</h3>
+        <div class="skill-cloud">
+          <span class="skill-cloud-item node"><i class="fab fa-node"></i> Node.js</span>
+          <span class="skill-cloud-item python"><i class="fab fa-python"></i> Python</span>
+          <span class="skill-cloud-item java"><i class="fab fa-java"></i> Java</span>
+          <span class="skill-cloud-item php"><i class="fab fa-php"></i> PHP</span>
+          <span class="skill-cloud-item sql"><i class="fas fa-database"></i> SQL</span>
+          <span class="skill-cloud-item mongo"><i class="fas fa-leaf"></i> MongoDB</span>
+        </div>
+      </div>
+
+      <!-- Design -->
+      <div class="skill-group" data-category="design">
+        <h3 class="skill-group-title"><i class="fas fa-paint-brush"></i> Design</h3>
+        <div class="skill-cloud">
+          <span class="skill-cloud-item figma"><i class="fab fa-figma"></i> Figma</span>
+          <span class="skill-cloud-item adobe"><i class="fab fa-adobe"></i> Adobe XD</span>
+          <span class="skill-cloud-item canva"><i class="fas fa-palette"></i> Canva</span>
+          <span class="skill-cloud-item framer"><i class="fas fa-cubes"></i> Framer</span>
+        </div>
+      </div>
+
+      <!-- AI Tools -->
+      <div class="skill-group" data-category="ai">
+        <h3 class="skill-group-title"><i class="fas fa-robot"></i> AI Tools</h3>
+        <div class="skill-cloud">
+          <span class="skill-cloud-item cursor"><i class="fas fa-terminal"></i> Cursor</span>
+          <span class="skill-cloud-item claude"><i class="fas fa-brain"></i> Claude</span>
+          <span class="skill-cloud-item gemini"><i class="fas fa-google"></i> Gemini</span>
+          <span class="skill-cloud-item firefly"><i class="fas fa-fire"></i> Firefly</span>
+          <span class="skill-cloud-item copilot"><i class="fas fa-magic"></i> Copilot</span>
+          <span class="skill-cloud-item midjourney"><i class="fas fa-image"></i> Midjourney</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="section relative overflow-hidden">
+    <div class="absolute top-20 right-10 w-64 h-64 bg-gradient-to-r from-purple-600 to-cyan-400 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+    <div class="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse delay-1000"></div>
+    
+    <div class="section-header relative z-10" data-aos="fade-up">
+      <span class="section-subtitle">⚡ featured work ⚡</span>
+      <h2 class="section-title">Recent <span class="gradient-text">projects</span></h2>
+      <p class="section-description">Each project solved real problems. Hover over cards to see the full story.</p>
+    </div>
+    
+    <!-- Filter buttons -->
+    <div class="project-filters" data-aos="fade-up">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Web App"><i class="fas fa-globe"></i> Web Apps</button>
+      <button class="filter-btn" data-filter="AI Tool"><i class="fas fa-robot"></i> AI Tools</button>
+      <button class="filter-btn" data-filter="Game"><i class="fas fa-gamepad"></i> Games</button>
+      <button class="filter-btn" data-filter="Business"><i class="fas fa-briefcase"></i> Business</button>
+    </div>
+    
+    <!-- Projects grid -->
+    <div class="projects-grid" id="projectsGrid" data-aos="fade-up" data-aos-delay="200"></div>
+    
+    <!-- View all button -->
+    <div class="text-center mt-16" data-aos="fade-up">
+      <a href="https://github.com/Dani1157?tab=repositories" target="_blank" class="btn primary large">
+        <i class="fab fa-github"></i> View All on GitHub
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- EPIC ARCADE SECTION -->
+  <section id="arcade" class="section">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">play time</span>
+      <h2 class="section-title">ULTIMATE <span class="gradient-text">SPACE DEFENDER</span></h2>
+      <p class="section-description">A fully playable arcade shooter I built from scratch. 20+ levels, boss fights, power-ups!</p>
+    </div>
+    
+    <!-- Game Stats Summary -->
+    <div class="game-summary" data-aos="fade-up">
+      <div class="summary-card">
+        <i class="fas fa-trophy"></i>
+        <div>
+          <span class="summary-label">Your High Score</span>
+          <span class="summary-value" id="highScoreDisplay">0000</span>
+        </div>
+      </div>
+      <div class="summary-card">
+        <i class="fas fa-star"></i>
+        <div>
+          <span class="summary-label">Total Score</span>
+          <span class="summary-value" id="totalScoreDisplay">0000</span>
+        </div>
+      </div>
+      <div class="summary-card">
+        <i class="fas fa-skull"></i>
+        <div>
+          <span class="summary-label">Bosses Defeated</span>
+          <span class="summary-value" id="bossesDefeated">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-wrapper" data-aos="fade-up" data-aos-delay="200">
+      <div class="game-container">
+        <!-- Game Stats Bar -->
+        <div class="game-stats">
+          <div class="stat-block">
+            <span class="stat-icon"><i class="fas fa-trophy"></i></span>
+            <span class="stat-label">LEVEL</span>
+            <span class="stat-value" id="gameLevel">1</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-icon"><i class="fas fa-star"></i></span>
+            <span class="stat-label">SCORE</span>
+            <span class="stat-value" id="gameScore">0000</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-icon"><i class="fas fa-heart"></i></span>
+            <span class="stat-label">LIVES</span>
+            <span class="stat-value" id="gameLives">3</span>
+          </div>
+        </div>
+
+        <!-- Main Game Canvas -->
+        <canvas id="gameCanvas" width="900" height="600"></canvas>
+
+        <!-- Power-up Bar -->
+        <div class="powerup-bar">
+          <div class="powerup-slot" id="powerup1">
+            <i class="fas fa-bolt"></i>
+            <span class="powerup-name">Rapid Fire</span>
+          </div>
+          <div class="powerup-slot" id="powerup2">
+            <i class="fas fa-expand"></i>
+            <span class="powerup-name">Spread Shot</span>
+          </div>
+          <div class="powerup-slot" id="powerup3">
+            <i class="fas fa-shield-alt"></i>
+            <span class="powerup-name">Shield</span>
+          </div>
+        </div>
+
+        <!-- Game Controls -->
+        <div class="game-controls-panel">
+          <div class="control-group">
+            <button id="restartBtn" class="game-btn primary">
+              <i class="fas fa-redo-alt"></i> New Game
+            </button>
+            <button id="pauseBtn" class="game-btn secondary">
+              <i class="fas fa-pause"></i> Pause
+            </button>
+          </div>
+          <div class="difficulty-selector">
+            <span>Difficulty:</span>
+            <button class="difficulty-btn active" data-diff="normal">Normal</button>
+            <button class="difficulty-btn" data-diff="hard">Hard</button>
+            <button class="difficulty-btn" data-diff="insane">Insane</button>
+          </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="game-instructions">
+          <span><i class="fas fa-arrow-left"></i> <i class="fas fa-arrow-right"></i> Move</span>
+          <span><i class="fas fa-space-shuttle"></i> Shoot</span>
+          <span><i class="fas fa-bolt"></i> Collect power-ups</span>
+          <span><i class="fas fa-skull"></i> Boss every 5 levels</span>
+        </div>
+
+        <!-- Achievement Notification -->
+        <div class="achievement-toast" id="achievementToast">
+          <i class="fas fa-medal"></i>
+          <span id="achievementText">Achievement Unlocked!</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-subtitle">let's connect</span>
+      <h2 class="section-title">Get in <span class="gradient-text">touch</span></h2>
+      <p class="section-description">Have a project in mind? Let's create something amazing together.</p>
+    </div>
+    
+    <div class="contact-grid">
+      <!-- Contact Info Card -->
+      <div class="contact-info-card" data-aos="fade-right">
+        <h3 class="contact-info-title">Let's build something amazing together</h3>
+        <p class="contact-info-desc">Whether it's a project, collaboration, or just a chat about tech — I'm always open to new opportunities.</p>
+        
+        <!-- Direct Contact Methods -->
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="method-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="method-details">
+              <span class="method-label">Email</span>
+              <a href="mailto:Dazai48@yahoo.com" class="method-value">Dazai48@yahoo.com</a>
+            </div>
+            <button class="copy-btn" data-copy="Dazai48@yahoo.com">
+              <i class="far fa-copy"></i>
+            </button>
+          </div>
+          
+          <div class="contact-method">
+            <div class="method-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="method-details">
+              <span class="method-label">Phone</span>
+              <a href="tel:+1234567890" class="method-value">+44 7346 267071</a>
+            </div>
+            <button class="copy-btn" data-copy="+44 7346 267071">
+              <i class="far fa-copy"></i>
+            </button>
+          </div>
+          
+          <div class="contact-method">
+            <div class="method-icon">
+              <i class="fab fa-discord"></i>
+            </div>
+            <div class="method-details">
+              <span class="method-label">Discord</span>
+              <span class="method-value">dani0569.</span>
+            </div>
+            <button class="copy-btn" data-copy="dani0569.">
+              <i class="far fa-copy"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Game Stats -->
+        <div class="game-highlight">
+          <div class="highlight-item">
+            <i class="fas fa-trophy"></i>
+            <span>High Score: <span id="highScore">0000</span></span>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-star"></i>
+            <span>Levels Completed: <span id="totalLevels">0</span></span>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-clock"></i>
+            <span>Response Time: <span id="responseTime">&lt; 24h</span></span>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="contact-social">
+          <h4>Find me on</h4>
+          <div class="social-links">
+            <a href="https://github.com/Dani1157" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/dani-dudley-59776026b" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" target="_blank"><i class="fab fa-discord"></i></a>
+            <a href="#" class="social-link" target="_blank"><i class="fab fa-codepen"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form Card -->
+      <div class="contact-form-card" data-aos="fade-left">
+        <h3 class="form-title">Send me a message</h3>
+        <p class="form-subtitle">I'll get back to you within 24 hours</p>
+        
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group half">
+              <label for="name">Your name</label>
+              <input type="text" id="name" placeholder="John Doe" required>
+              <div class="input-focus"></div>
+            </div>
+            <div class="form-group half">
+              <label for="email">Email address</label>
+              <input type="email" id="email" placeholder="john@example.com" required>
+              <div class="input-focus"></div>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject">
+              <option>Project Collaboration</option>
+              <option>Job Opportunity</option>
+              <option>Just saying hi</option>
+              <option>Feedback</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Your message</label>
+            <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="budget">Budget range (optional)</label>
+            <select id="budget">
+              <option>Not specified</option>
+              <option>$1,000 - $5,000</option>
+              <option>$5,000 - $10,000</option>
+              <option>$10,000+</option>
+            </select>
+          </div>
+          
+          <button type="submit" class="btn primary submit-btn" id="submitBtn">
+            <span class="btn-text">Send message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          
+          <div class="form-note">
+            <i class="fas fa-lock"></i>
+            <span>Your info is safe with me. No spam, ever.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-wave">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25"></path>
+        <path d="M0,0V15.81C13,21.25,27.93,25.82,44.5,28.45c69.26,10.07,136.94,12.85,205.27-6,70.58-19.53,136.24-50.45,206.9-55.49C523,5.44,592.45,24.9,662.21,39.16c68.1,14.14,136.54,18.5,206.13,4.47C921.75,31.22,972.44,10.85,1020.48,2.72,1081-7.08,1139.58,2.17,1200,22V0Z" opacity=".5"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"></path>
+      </svg>
+    </div>
+    
+    <div class="footer-content">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <div class="footer-logo">Dani<span>.</span></div>
+          <p class="footer-tagline">Design Engineer • Creative Developer • AI Explorer</p>
+          <p class="footer-quote">"Building the future, one line of code at a time."</p>
+        </div>
+        
+        <div class="footer-links">
+          <div class="footer-nav">
+            <h4>Navigation</h4>
+            <a href="#home">Home</a>
+            <a href="#work">Work</a>
+            <a href="#projects">Projects</a>
+            <a href="#arcade">Arcade</a>
+          </div>
+          <div class="footer-social">
+            <h4>Connect</h4>
+            <a href="https://github.com/Dani1157">GitHub</a>
+            <a href="https://www.linkedin.com/in/dani-dudley-59776026b">LinkedIn</a>
+            <a href="#">Twitter</a>
+            <a href="#">Discord</a>
+          </div>
+          <div class="footer-resources">
+            <h4>Resources</h4>
+            <a href="#">Resume</a>
+            <a href="#">Blog</a>
+            <a href="#">Newsletter</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2026 Dani — built with 💜 and JavaScript</p>
+        <p class="footer-made">✨ epic space shooter with 20+ levels • 40+ achievements • boss fights every 5 levels ✨</p>
+        <div class="footer-badges">
+          <span class="badge">⚡ 50/50 workflow</span>
+          <span class="badge">🎨 Figma + Code</span>
+          <span class="badge">🚀 Vite powered</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts - FIXED: Removed type="module", using standard scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
