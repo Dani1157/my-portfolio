@@ -19,15 +19,15 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================================
 
 const projects = [
-    {
+{
     id: "drimify-studio",
     title: "Drimify AI Component Studio",
-    role: "UI/UX Design Engineer Candidate",
-    shortDesc: "Live interactive demo built for Drimify job application - AI prompt playground with real-time component preview",
-    impact: "Interactive demonstration of AI-first design workflow with simulated component generation",
-    problem: "Traditional job applications use static PDFs that don't showcase real skills. Drimify's job spec asked for 'Stop drawing. Start building.'",
-    solution: "Built a live web app with an AI prompt simulator, glass morphism UI, and real-time preview changes. Features Drimify's actual stats (300% engagement, 92% basket lift, 8M+ plays) and 'Feedback is a Gift' culture.",
-    result: "Delivered a fully functional demo that proves I can code in Tailwind, understand AI workflows, and ship production-ready components - all within hours.",
+    role: "UI/UX Design Engineer",
+    shortDesc: "Self-initiated concept demo built to showcase AI-first design workflow - interactive prompt playground with real-time component preview",
+    impact: "Demonstration piece showing how AI tools can accelerate UI/UX design workflows",
+    problem: "Wanted to showcase my ability to combine design thinking with AI tools and production-ready code. Created a concept demo inspired by modern design engineering roles.",
+    solution: "Built a live interactive web app with an AI prompt simulator, glass morphism UI, and real-time preview changes. Features realistic stats and 'Feedback is a Gift' culture messaging.",
+    result: "Delivered a fully functional demo that proves I can code in Tailwind, understand AI workflows, and ship production-ready components independently.",
     metrics: {
       views: "Live",
       components: "Interactive",
@@ -46,16 +46,17 @@ const projects = [
     achievements: [
       "🤖 AI prompt simulator with visual feedback",
       "🎨 Glass morphism and custom animations",
-      "📊 Drimify's real stats integrated",
-      "💬 'Feedback is a Gift' culture showcased",
+      "📊 Realistic stats integration",
+      "💬 'Feedback is a Gift' culture showcase",
       "🚀 Deployed on Vercel in hours"
     ],
     testimonial: {
-      quote: "Built as a live job application. Shows exactly how I think, code, and collaborate.",
+      quote: "A self-directed project demonstrating AI-first design engineering skills and initiative.",
       author: "Dani1157",
-      role: "For Drimify Review"
+      role: "Portfolio Showcase"
     }
-  },
+},
+
   {
     id: "vinyl-desk",
     title: "Vinyl Desk - Virtual Record Player",
