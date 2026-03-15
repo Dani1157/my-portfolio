@@ -4,6 +4,43 @@
 document.addEventListener('DOMContentLoaded', function() {
 
 const projects = [
+    {
+    id: "drimify-studio",
+    title: "Drimify AI Component Studio",
+    role: "UI/UX Design Engineer Candidate",
+    shortDesc: "Live interactive demo built for Drimify job application - AI prompt playground with real-time component preview",
+    impact: "Interactive demonstration of AI-first design workflow with simulated component generation",
+    problem: "Traditional job applications use static PDFs that don't showcase real skills. Drimify's job spec asked for 'Stop drawing. Start building.'",
+    solution: "Built a live web app with an AI prompt simulator, glass morphism UI, and real-time preview changes. Features Drimify's actual stats (300% engagement, 92% basket lift, 8M+ plays) and 'Feedback is a Gift' culture.",
+    result: "Delivered a fully functional demo that proves I can code in Tailwind, understand AI workflows, and ship production-ready components - all within hours.",
+    metrics: {
+      views: "Live",
+      components: "Interactive",
+      rating: "✨",
+      stats: "3",
+      brands: "4"
+    },
+    tech: ["HTML5", "Tailwind CSS", "JavaScript", "Claude 3.7", "Cursor", "Vercel", "Glass Morphism", "Custom Animations"],
+    github: "https://github.com/Dani1157/drimify-case-study",
+    live: "https://drimify-case-study.vercel.app",
+    image: "/my-portfolio/images/demo.png", 
+    category: "Interactive Demo",
+    year: "2026",
+    featured: true,
+    color: "#8B5CF6", 
+    achievements: [
+      "🤖 AI prompt simulator with visual feedback",
+      "🎨 Glass morphism and custom animations",
+      "📊 Drimify's real stats integrated",
+      "💬 'Feedback is a Gift' culture showcased",
+      "🚀 Deployed on Vercel in hours"
+    ],
+    testimonial: {
+      quote: "Built as a live job application. Shows exactly how I think, code, and collaborate.",
+      author: "Dani1157",
+      role: "For Drimify Review"
+    }
+  },
   {
     id: "vinyl-desk",
     title: "Vinyl Desk - Virtual Record Player",
