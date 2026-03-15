@@ -1,6 +1,4 @@
-Here's your **FIXED README.md** with the corrected badge and formatting:
 
-```markdown
 # 🚀 Dani's Creative Dev Portfolio
 
 ![Portfolio Preview](https://via.placeholder.com/1200x600/6c5ce7/ffffff?text=Dani+Portfolio+Preview)
