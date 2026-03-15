@@ -1,3 +1,6 @@
+Here's your **FIXED README.md** with the corrected badge and formatting:
+
+```markdown
 # 🚀 Dani's Creative Dev Portfolio
 
 ![Portfolio Preview](https://via.placeholder.com/1200x600/6c5ce7/ffffff?text=Dani+Portfolio+Preview)
@@ -6,7 +9,7 @@
 
 Hey there! I'm Dani, a passionate **Design Engineer & Creative Developer** who loves building immersive digital experiences that live at the intersection of code and creativity. This portfolio isn't just a collection of projects—it's a reflection of my personality, my coding philosophy, and my obsession with creating things that feel alive.
 
-[![Live Demo]https://dani1157.github.io/my-portfolio/
+[![Live Demo](https://img.shields.io/badge/LIVE_DEMO-00fff5?style=for-the-badge&logo=github&logoColor=black)](https://dani1157.github.io/my-portfolio/)
 [![GitHub Repo](https://img.shields.io/badge/GITHUB-6c5ce7?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Dani1157/my-portfolio)
 
 ---
@@ -306,7 +309,7 @@ This portfolio is configured for easy deployment to GitHub Pages:
 1. **Update the base path** in `vite.config.js`:
 ```javascript
 export default defineConfig({
-  base: '/your-repo-name/',
+  base: '/my-portfolio/',
   plugins: [tailwindcss()]
 })
 ```
@@ -321,11 +324,6 @@ npm run build
 git add dist -f
 git commit -m "Deploy to gh-pages"
 git subtree push --prefix dist origin gh-pages
-```
-
-Or use the included script:
-```bash
-npm run deploy
 ```
 
 4. **Enable GitHub Pages**
@@ -446,7 +444,6 @@ I'm always working to make this portfolio better. Here's what's coming:
 - [ ] Add more games to the arcade section
 - [ ] Implement a CMS for easier project updates
 - [ ] Add internationalization (multi-language support)
-- [ ] Create a dark/light mode toggle with system preference detection
 - [ ] Add more interactive data visualizations
 
 ---
@@ -470,3 +467,4 @@ If you're reading this, thank you for taking the time to explore my work. Whethe
   <a href="https://github.com/Dani1157/my-portfolio">GitHub</a> •
   <a href="mailto:Dazai48@yahoo.com">Contact</a>
 </p>
+```
