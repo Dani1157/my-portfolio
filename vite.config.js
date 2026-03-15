@@ -21,5 +21,4 @@ export default defineConfig({
   server: {
     open: true
   }
-  // 👋 REMOVE the publicDir line entirely - it's not needed!
 })

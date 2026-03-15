@@ -1,11 +1,22 @@
 // ============================================
-// PROJECTS DATA - WITH DYNAMIC PATHS FOR GITHUB PAGES & VERCEL
+// PROJECTS DATA - ULTIMATE EDITION
 // ============================================
 
-// Auto-detect if we're on GitHub Pages
+// Auto-detect if we're on GitHub Pages - GLOBAL SCOPE
 const BASE_PATH = window.location.hostname.includes('github.io') ? '/my-portfolio' : '';
 
+// Store projects in global scope
+window.projectsData = [];
+
+// Global variables
+let currentFilter = 'all';
+let autoRotateInterval;
+
 document.addEventListener('DOMContentLoaded', function() {
+
+// ============================================
+// PROJECTS DATA
+// ============================================
 
 const projects = [
     {
@@ -212,138 +223,13 @@ const projects = [
     ]
   }
 ];
-// ============================================
-// HELPER FUNCTIONS
-// ============================================
 
-// Showcase controls
-function initShowcaseControls() {
-  const items = document.querySelectorAll('.showcase-item');
-  const prevBtn = document.querySelector('.showcase-prev');
-  const nextBtn = document.querySelector('.showcase-next');
-  let currentIndex = 0;
-  
-  function showItem(index) {
-    items.forEach((item, i) => {
-      item.classList.toggle('active', i === index);
-    });
-  }
-  
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + items.length) % items.length;
-      showItem(currentIndex);
-    });
-  }
-  
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % items.length;
-      showItem(currentIndex);
-    });
-  }
-}
-
-function startAutoRotate() {
-  autoRotateInterval = setInterval(() => {
-    const nextBtn = document.querySelector('.showcase-next');
-    const showcase = document.querySelector('.showcase-container');
-    
-    if (nextBtn && showcase && !showcase.matches(':hover')) {
-      nextBtn.click();
-    }
-  }, 5000);
-}
-
-// Particle effect
-function createParticleEffect(e, card) {
-  for (let i = 0; i < 8; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particle.style.left = e.clientX + 'px';
-    particle.style.top = e.clientY + 'px';
-    particle.style.background = `linear-gradient(135deg, ${getComputedStyle(card).getPropertyValue('--card-color')}, #00fff5)`;
-    document.body.appendChild(particle);
-    
-    setTimeout(() => particle.remove(), 1000);
-  }
-}
-
-function initCardAnimations() {
-  const cards = document.querySelectorAll('.project-card');
-
-  cards.forEach(card => {
-    let leaveTimer = null;
-
-    card.addEventListener('mouseenter', (e) => {
-      clearTimeout(leaveTimer);
-      card.classList.add('flipped');
-      createParticleEffect(e, card);
-    });
-
-    card.addEventListener('mouseleave', () => {
-      leaveTimer = setTimeout(() => {
-        card.classList.remove('flipped');
-      }, 600);
-    });
-
-    // Cancel the unflip if mousedown happens (user is about to click)
-    card.addEventListener('mousedown', () => {
-      clearTimeout(leaveTimer);
-    });
-  });
-}
-
-// Image error handling
-function attachImageErrorHandlers() {
-  document.querySelectorAll('.project-image').forEach(img => {
-    const bg = img.style.backgroundImage;
-    const url = bg.replace(/url\(['"](.*)['"]\)/g, '$1');
-    
-    const testImg = new Image();
-    testImg.onload = () => {};
-    testImg.onerror = () => {
-      const card = img.closest('.project-card');
-      const cardColor = card ? card.style.getPropertyValue('--card-color') : '#6c5ce7';
-      img.style.background = `linear-gradient(135deg, ${cardColor} 0%, #1a1b2f 100%)`;
-      img.innerHTML = `<i class="fas fa-code-branch" style="font-size: 4rem; color: white; opacity: 0.3; display: flex; align-items: center; justify-content: center; height: 100%;"></i>`;
-    };
-    testImg.src = url;
-  });
-}
+// Store projects globally
+window.projectsData = projects;
 
 // ============================================
-// SCROLL LOCK FIX - Prevents page scroll when scrolling inside cards
+// RENDER PROJECTS FUNCTION (SINGLE VERSION)
 // ============================================
-function initCardScrollLock() {
-  document.addEventListener('wheel', function(e) {
-    const backEl = e.target.closest('.card-back');
-    if (!backEl) return;
-
-    const scrollTop = backEl.scrollTop;
-    const scrollHeight = backEl.scrollHeight;
-    const clientHeight = backEl.clientHeight;
-
-    const atTop = scrollTop === 0;
-    const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
-
-    // Check boundaries FIRST before preventing anything
-    if ((e.deltaY < 0 && atTop) || (e.deltaY > 0 && atBottom)) return;
-
-    // Only now block the page scroll and handle it ourselves
-    e.stopPropagation();
-    e.preventDefault();
-    backEl.scrollTop += e.deltaY;
-  }, { passive: false });
-}
-
-// ============================================
-// ULTIMATE PROJECT RENDERING
-// ============================================
-
-let currentFilter = 'all';
-let currentProjectIndex = 0;
-let autoRotateInterval;
 
 function renderProjects(filter = 'all') {
   const grid = document.getElementById('projectsGrid');
@@ -470,10 +356,162 @@ function renderProjects(filter = 'all') {
 }
 
 // ============================================
-// QUICK VIEW MODAL
+// HELPER FUNCTIONS
 // ============================================
 
-function quickView(projectId) {
+// Particle effect
+function createParticleEffect(e, card) {
+  for (let i = 0; i < 8; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = e.clientX + 'px';
+    particle.style.top = e.clientY + 'px';
+    particle.style.background = `linear-gradient(135deg, ${getComputedStyle(card).getPropertyValue('--card-color')}, #00fff5)`;
+    document.body.appendChild(particle);
+    setTimeout(() => particle.remove(), 1000);
+  }
+}
+
+function initCardAnimations() {
+  const cards = document.querySelectorAll('.project-card');
+  cards.forEach(card => {
+    let leaveTimer = null;
+    card.addEventListener('mouseenter', (e) => {
+      clearTimeout(leaveTimer);
+      card.classList.add('flipped');
+      createParticleEffect(e, card);
+    });
+    card.addEventListener('mouseleave', () => {
+      leaveTimer = setTimeout(() => {
+        card.classList.remove('flipped');
+      }, 600);
+    });
+    card.addEventListener('mousedown', () => {
+      clearTimeout(leaveTimer);
+    });
+  });
+}
+
+// Image error handling
+function attachImageErrorHandlers() {
+  document.querySelectorAll('.project-image').forEach(img => {
+    const bg = img.style.backgroundImage;
+    const url = bg.replace(/url\(['"](.*)['"]\)/g, '$1');
+    const testImg = new Image();
+    testImg.onerror = () => {
+      const card = img.closest('.project-card');
+      const cardColor = card ? card.style.getPropertyValue('--card-color') : '#6c5ce7';
+      img.style.background = `linear-gradient(135deg, ${cardColor} 0%, #1a1b2f 100%)`;
+      img.innerHTML = `<i class="fas fa-code-branch" style="font-size: 4rem; color: white; opacity: 0.3;"></i>`;
+    };
+    testImg.src = url;
+  });
+}
+
+// Scroll lock fix
+function initCardScrollLock() {
+  document.addEventListener('wheel', function(e) {
+    const backEl = e.target.closest('.card-back');
+    if (!backEl) return;
+    const scrollTop = backEl.scrollTop;
+    const scrollHeight = backEl.scrollHeight;
+    const clientHeight = backEl.clientHeight;
+    const atTop = scrollTop === 0;
+    const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
+    if ((e.deltaY < 0 && atTop) || (e.deltaY > 0 && atBottom)) return;
+    e.stopPropagation();
+    e.preventDefault();
+    backEl.scrollTop += e.deltaY;
+  }, { passive: false });
+}
+
+// Showcase controls
+function initShowcaseControls() {
+  const items = document.querySelectorAll('.showcase-item');
+  const prevBtn = document.querySelector('.showcase-prev');
+  const nextBtn = document.querySelector('.showcase-next');
+  let currentIndex = 0;
+  
+  function showItem(index) {
+    items.forEach((item, i) => {
+      item.classList.toggle('active', i === index);
+    });
+  }
+  
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      showItem(currentIndex);
+    });
+  }
+  
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % items.length;
+      showItem(currentIndex);
+    });
+  }
+}
+
+function startAutoRotate() {
+  if (autoRotateInterval) clearInterval(autoRotateInterval);
+  autoRotateInterval = setInterval(() => {
+    const nextBtn = document.querySelector('.showcase-next');
+    const showcase = document.querySelector('.showcase-container');
+    if (nextBtn && showcase && !showcase.matches(':hover')) {
+      nextBtn.click();
+    }
+  }, 5000);
+}
+
+// Auto-rotating showcase
+function initAutoRotatingShowcase() {
+  if (document.querySelector('.project-showcase')) return;
+  
+  const featuredProjects = projects.filter(p => p.featured);
+  if (featuredProjects.length === 0) return;
+  
+  const showcase = document.createElement('div');
+  showcase.className = 'project-showcase';
+  showcase.innerHTML = `
+    <div class="showcase-header">
+      <h3>✨ Featured Work</h3>
+      <div class="showcase-controls">
+        <button class="showcase-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="showcase-next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+    <div class="showcase-container">
+      ${featuredProjects.map((project, i) => `
+        <div class="showcase-item ${i === 0 ? 'active' : ''}" style="--item-color: ${project.color}">
+          <div class="showcase-image" style="background-image: url('${project.image}')"></div>
+          <div class="showcase-content">
+            <span class="showcase-category">${project.category}</span>
+            <h4>${project.title}</h4>
+            <p>${project.shortDesc}</p>
+            <div class="showcase-metrics">
+              <span><i class="fas fa-star"></i> ${Object.values(project.metrics)[0]}</span>
+              <span><i class="fas fa-code"></i> ${project.tech.length} tech</span>
+            </div>
+            <button onclick="quickView('${project.id}')" class="showcase-btn" style="background: ${project.color};">View Project</button>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  
+  const projectsSection = document.getElementById('projects');
+  const filterSection = projectsSection?.querySelector('.project-filters');
+  
+  if (projectsSection && filterSection) {
+    projectsSection.insertBefore(showcase, filterSection);
+    initShowcaseControls();
+    startAutoRotate();
+  }
+}
+
+// Quick view modal
+window.quickView = function(projectId) {
   const project = projects.find(p => p.id === projectId);
   if (!project) return;
   
@@ -486,9 +524,6 @@ function quickView(projectId) {
         <div class="modal-media">
           <div class="modal-image" style="background-image: url('${project.image}')"></div>
           <div class="modal-stats">
-            <div class="stat-circle" style="background: conic-gradient(${project.color} ${Object.values(project.metrics)[0]}deg, #2a2b36 0deg)">
-              <span>${Object.values(project.metrics)[0]}</span>
-            </div>
             <div class="stat-list">
               ${Object.entries(project.metrics).map(([key, value]) => `
                 <div class="stat-row">
@@ -527,9 +562,11 @@ function quickView(projectId) {
             <a href="${project.github}" class="modal-btn github" target="_blank">
               <i class="fab fa-github"></i> GitHub
             </a>
-            <a href="${project.live}" class="modal-btn live" target="_blank" style="background: ${project.color}">
-              <i class="fas fa-external-link-alt"></i> Live Demo
-            </a>
+            ${project.live !== '#' ? `
+              <a href="${project.live}" class="modal-btn live" target="_blank" style="background: ${project.color}">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+            ` : ''}
           </div>
         </div>
       </div>
@@ -550,81 +587,34 @@ function quickView(projectId) {
       setTimeout(() => modal.remove(), 300);
     }
   });
-}
+};
 
 // ============================================
-// AUTO-ROTATING SHOWCASE
+// INITIALIZATION
 // ============================================
 
-function initAutoRotatingShowcase() {
-  if (document.querySelector('.project-showcase')) return;
-  
-  const featuredProjects = projects.filter(p => p.featured);
-  if (featuredProjects.length === 0) return;
-  
-  const showcase = document.createElement('div');
-  showcase.className = 'project-showcase';
-  showcase.innerHTML = `
-    <div class="showcase-header">
-      <h3>✨ Featured Work</h3>
-      <div class="showcase-controls">
-        <button class="showcase-prev"><i class="fas fa-chevron-left"></i></button>
-        <button class="showcase-next"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
-    <div class="showcase-container">
-      ${featuredProjects.map((project, i) => `
-        <div class="showcase-item ${i === 0 ? 'active' : ''}" style="--item-color: ${project.color}">
-          <div class="showcase-image" style="background-image: url('${project.image}')"></div>
-          <div class="showcase-content">
-            <span class="showcase-category">${project.category}</span>
-            <h4>${project.title}</h4>
-            <p>${project.shortDesc}</p>
-            <div class="showcase-metrics">
-              <span><i class="fas fa-star"></i> ${Object.values(project.metrics)[0]}</span>
-              <span><i class="fas fa-code"></i> ${project.tech.length} tech</span>
-            </div>
-        <button onclick="quickView('${project.id}')" class="showcase-btn" style="background: ${project.color}; border: none; cursor: none;">View Project</button>
-          </div>
-        </div>
-      `).join('')}
-    </div>
-  `;
-  
-  const projectsSection = document.getElementById('projects');
-  const filterSection = projectsSection?.querySelector('.project-filters');
-  
-  if (projectsSection && filterSection) {
-    projectsSection.insertBefore(showcase, filterSection);
-    initShowcaseControls();
-    startAutoRotate();
-  }
-}
+// Clear any existing interval
+if (autoRotateInterval) clearInterval(autoRotateInterval);
 
-// ============================================
-// FILTER FUNCTIONALITY
-// ============================================
+// Initialize everything
+initAutoRotatingShowcase();
+renderProjects();
+initCardScrollLock();
 
-  if (autoRotateInterval) clearInterval(autoRotateInterval);
-  
-  initAutoRotatingShowcase();
-  renderProjects();
-  initCardScrollLock(); // ← ADDED THIS LINE
-  
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentFilter = btn.dataset.filter;
-      renderProjects(currentFilter);
-    });
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    renderProjects(currentFilter);
   });
-  
-  document.querySelector('a[href="#projects"]')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-  });
-
-window.quickView = quickView;
-
 });
+
+// Smooth scroll for projects link
+document.querySelector('a[href="#projects"]')?.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+});
+
+}); // End of DOMContentLoaded
