@@ -1,6 +1,10 @@
 // ============================================
-// PROJECTS DATA - ULTIMATE EDITION
+// PROJECTS DATA - WITH DYNAMIC PATHS FOR GITHUB PAGES & VERCEL
 // ============================================
+
+// Auto-detect if we're on GitHub Pages
+const BASE_PATH = window.location.hostname.includes('github.io') ? '/my-portfolio' : '';
+
 document.addEventListener('DOMContentLoaded', function() {
 
 const projects = [
@@ -23,7 +27,7 @@ const projects = [
     tech: ["HTML5", "Tailwind CSS", "JavaScript", "Claude 3.7", "Cursor", "Vercel", "Glass Morphism", "Custom Animations"],
     github: "https://github.com/Dani1157/drimify-case-study",
     live: "https://drimify-case-study.vercel.app",
-    image: "/my-portfolio/images/demo.png", 
+    image: `${BASE_PATH}/images/demo.png`,
     category: "Interactive Demo",
     year: "2026",
     featured: true,
@@ -60,7 +64,7 @@ const projects = [
     tech: ["HTML5", "CSS3", "JavaScript", "Canvas API", "Web Audio API", "YouTube API", "LocalStorage"],
     github: "https://github.com/Dani1157/Vinyl-Desk.git",
     live: "https://dani1157.github.io/Vinyl-Desk/",
-    image: "/my-portfolio/images/vinyldesk.jpg", 
+    image: `${BASE_PATH}/images/vinyldesk.jpg`,
     video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     category: "Web App",
     year: "2025",
@@ -97,7 +101,7 @@ const projects = [
     tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap 5", "AI Pattern Matching", "LocalStorage"],
     github: "https://github.com/Dani1157/-AI-Chat-Interface",
     live: "https://dani1157.github.io/-AI-Chat-Interface/",
-    image: "/my-portfolio/images/nexus-css.jpg",
+    image: `${BASE_PATH}/images/nexus-css.jpg`,
     category: "AI Tool",
     year: "2025",
     featured: true,
@@ -132,7 +136,7 @@ const projects = [
     tech: ["HTML5", "CSS3", "JavaScript", "EmailJS", "SEO Optimization", "Form Validation"],
     github: "https://github.com/Dani1157/Cleaning-Web",
     live: "https://dani1157.github.io/Cleaning-Web/",
-    image: "/my-portfolio/images/cleaning-web.jpg",
+    image: `${BASE_PATH}/images/cleaning-web.jpg`,
     category: "Business",
     year: "2025",
     featured: true,
@@ -167,7 +171,7 @@ const projects = [
     tech: ["Python", "OOP", "Git", "Unit Testing", "Randomization"],
     github: "https://github.com/Dani1157/battleshipsgame1",
     live: "#",
-    image: "/my-portfolio/images/battleship.jpg",
+    image: `${BASE_PATH}/images/battleship.jpg`,
     category: "Game",
     year: "2023",
     featured: false,
@@ -196,7 +200,7 @@ const projects = [
     tech: ["HTML5", "CSS3", "JavaScript", "Local Storage", "Animations"],
     github: "https://github.com/Dani1157/Rock-Paper-Scissors-game",
     live: "https://dani1157.github.io/Rock-Paper-Scissors-game/",
-    image: "/my-portfolio/images/rps.jpg",
+    image: `${BASE_PATH}/images/rps.jpg`,
     category: "Game",
     year: "2025",
     featured: false,

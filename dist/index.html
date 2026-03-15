@@ -11,8 +11,8 @@
   <!-- AOS Animation Library - Using CDN for reliability -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <!-- Your custom CSS -->
-  <script type="module" crossorigin src="/my-portfolio/assets/index-NSNJ57sO.js"></script>
-  <link rel="stylesheet" crossorigin href="/my-portfolio/assets/index-BwTCotmS.css">
+  <script type="module" crossorigin src="/assets/index-Bb20YuMc.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BwTCotmS.css">
 </head>
 <body>
   <!-- Animated background elements -->
@@ -556,5 +556,16 @@
   </button>
 
   <!-- Scripts - FIXED: Removed type="module", using standard scripts -->
+  <!-- ADD THESE LINES for AOS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100,
+      easing: 'ease-in-out'
+    });
+  </script>
+</body>
 </body>
 </html>
