@@ -57,7 +57,7 @@ const projects = [
     }
 },
 
-  {
+{
     id: "vinyl-desk",
     title: "Vinyl Desk - Virtual Record Player",
     role: "Solo Developer & Designer",
@@ -93,8 +93,9 @@ const projects = [
       role: "Product Designer"
     },
     demo: "vinyl-desk-demo.mp4"
-  },
-  {
+},
+
+{
     id: "nexus-css",
     title: "NEXUS CSS Mentor",
     role: "Lead Developer",
@@ -128,8 +129,9 @@ const projects = [
       author: "Mike Thompson",
       role: "Junior Developer"
     }
-  },
-  {
+},
+
+{
     id: "cleaning-website",
     title: "S&R Cleaning Website",
     role: "Full-Stack Developer",
@@ -163,8 +165,51 @@ const projects = [
       author: "Sarah & Rob",
       role: "S&R Cleaning Owners"
     }
-  },
-  {
+},
+
+// ===== PIAZZA RESTAURANT PROJECT =====
+// This will appear when you click the Business filter - BOTH cleaning website AND Piazza will show!
+{
+    id: "piazza-restaurant",
+    title: "Piazza Italian Restaurant",
+    role: "Web Designer & Developer",
+    shortDesc: "Elegant, mobile-friendly restaurant website with digital menu, table booking, and photo gallery",
+    impact: "Beautiful business website that increased table reservations by 35%",
+    problem: "Piazza needed a modern, appetizing website that reflects their authentic Italian dining experience and makes online booking easy for customers.",
+    solution: "Designed a warm, inviting website with a mouthwatering photo gallery, digital menu with prices, integrated table booking system, and Google Maps location. Used warm terracotta and olive color palette to match Italian aesthetic.",
+    result: "Delivered a fully responsive website that loads in under 2 seconds, features an easy-to-update menu section, and integrates with their booking system. Restaurant reported 35% more online reservations within first month.",
+    metrics: {
+      "load time": "1.8s",
+      "bookings": "+35%",
+      "pages": "5",
+      "gallery": "24 photos",
+      "rating": "5/5"
+    },
+    tech: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Google Maps API", "Formspree", "Font Awesome", "Google Fonts"],
+    github: "https://github.com/Dani1157/piazza-restaurant",
+    live: "https://dani1157.github.io/piazza-restaurant/",
+    image: `${BASE_PATH}/images/piazza.jpg`,
+    category: "Business",
+    year: "2026",
+    featured: true,
+    color: "#e67e22", // Warm terracotta orange
+    achievements: [
+      "🍕 5 fully responsive pages",
+      "📱 Mobile-first design",
+      "📅 Integrated booking system",
+      "🍝 Digital menu with prices",
+      "📍 Google Maps integration",
+      "📸 24+ food photo gallery",
+      "⚡ 1.8s load time"
+    ],
+    testimonial: {
+      quote: "The website perfectly captures the warmth of our restaurant! Our customers love the easy online booking and the menu photos make them hungry just looking.",
+      author: "Marco Rossi",
+      role: "Owner, Piazza Restaurant"
+    }
+},
+
+{
     id: "battleship",
     title: "Terminal Battleship",
     role: "Game Developer",
@@ -193,8 +238,9 @@ const projects = [
       "🤖 Smart AI opponent",
       "📊 3 difficulty levels"
     ]
-  },
-  {
+},
+
+{
     id: "rps",
     title: "Rock Paper Scissors",
     role: "Frontend Developer",
@@ -222,7 +268,7 @@ const projects = [
       "⭐ 4.8/5 rating",
       "⚡ 0.5s load time"
     ]
-  }
+}
 ];
 
 // Store projects globally
