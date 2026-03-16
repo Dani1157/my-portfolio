@@ -167,8 +167,6 @@ const projects = [
     }
 },
 
-// ===== PIAZZA RESTAURANT PROJECT =====
-// This will appear when you click the Business filter - BOTH cleaning website AND Piazza will show!
 {
     id: "piazza-restaurant",
     title: "Piazza Italian Restaurant",
@@ -186,8 +184,8 @@ const projects = [
       "rating": "5/5"
     },
     tech: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Google Maps API", "Formspree", "Font Awesome", "Google Fonts"],
-    github: "https://github.com/Dani1157/piazza-restaurant",
-    live: "https://dani1157.github.io/piazza-restaurant/",
+    github: "https://github.com/Dani1157/pizza-website",
+    live: "https://dani1157.github.io/pizza-website/",
     image: `${BASE_PATH}/images/piazza.jpg`,
     category: "Business",
     year: "2026",
